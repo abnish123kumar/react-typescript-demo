@@ -1,5 +1,10 @@
+*{
+  background-color: white;
+}
 .App {
   text-align: center;
+  
+  color: black;
 }
 
 .App-logo {
@@ -36,3 +41,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* .boxes{
+  margin: auto;
+  height: 100px;
+  border: 2px solid black;
+} */
