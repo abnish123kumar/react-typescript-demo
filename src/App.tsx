@@ -16,10 +16,10 @@ function App() {
    
    
  
-
+   let newConnection :any = {}
   function degreeOfSepration(source:string, target:string) {
   
-    let newConnection :any = {}
+    
     for(let i=0; i<localStorage.length; i++){
       newConnection[localStorage.key(i)||" "]= JSON.parse(localStorage.getItem(localStorage.key(i)||" ")||" ");
    }
@@ -68,6 +68,25 @@ function App() {
       }
        else 
        localStorage.setItem(`${user1}`, JSON.stringify([user2]));
+
+       if(localStorage.getItem(`${user2}`)){ 
+        
+        console.log("mundhkehdkj")
+          let jstion = (JSON.parse(localStorage.getItem(`${user2}`)||" "));
+           console.log(jstion);
+           console.log(jstion.includes(`${user1}`))
+         if(jstion.includes(`${user1}`)){ 
+             console.log("hero");
+           
+        localStorage.setItem(`${user2}`,JSON.stringify(jstion))
+         }else{
+          jstion.push(`${user1}`)
+          localStorage.setItem(`${user2}`,JSON.stringify( jstion))
+         }
+         
+        }
+         else 
+         localStorage.setItem(`${user2}`, JSON.stringify([user1]));
 
       
  }
